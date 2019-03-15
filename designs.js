@@ -37,7 +37,7 @@ inputs = document.querySelectorAll('input');
 var gridSize = document.getElementById('sizePicker');
 
 function makeGrid() {
-  var canvas = document.getElementById('pixel_canvas');
+  var canvas = document.getElementById('pixelCanvas');
   var gridHeight = document.getElementById('inputHeight').value;
   var gridWidth = document.getElementById('inputWidth').value;
   //inputs = document.querySelectorAll('input');
@@ -46,12 +46,14 @@ function makeGrid() {
   //gridColor = inputs[3]
 
   for (var i = 1; i <= gridHeight; i++){
-    //var newCol = document.createElement('td');
-    //canvas.appendChild(newCol);
-    console.log('column ' + i);
+    var newRow = document.createElement('tr');
+    canvas.appendChild(newRow);
+    console.log('Row ' + i);
 
     for (var j = 1; j <= gridWidth; j++){
-      console.log('row '+ j)
+      var newCol = document.createElement('td');
+      canvas.appendChild(newCol);
+      console.log('Column '+ j)
     }
   }
 
