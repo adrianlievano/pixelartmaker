@@ -33,18 +33,17 @@ inputs = document.querySelectorAll('input');
 //console.log('document clicked');
 //bod.style.backgroundColor = 'yellow';
 //});
-//var colorPicker = document.getElementByID('colorPicker');
+var colorPicker = document.getElementById('colorPicker');
 var gridSize = document.getElementById('sizePicker');
+
+
 
 function makeGrid() {
   var canvas = document.getElementById('pixelCanvas');
   var gridHeight = document.getElementById('inputHeight').value;
   var gridWidth = document.getElementById('inputWidth').value;
-  //inputs = document.querySelectorAll('input');
-  //gridHeight = inputs[0]
-  //gridWidth = inputs[1]
-  //gridColor = inputs[3]
 
+//Builds grid
   for (var i = 1; i <= gridHeight; i++){
     var newRow = document.createElement('tr');
     canvas.appendChild(newRow);
@@ -54,6 +53,12 @@ function makeGrid() {
       var newCol = document.createElement('td');
       canvas.appendChild(newCol);
       console.log('Column '+ j)
+
+//Get color input
+  newCol.addEventListener('click', function () {
+    event.target.style.backgroundColor = colorPicker.value;
+  })
+
     }
   }
 
