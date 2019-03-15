@@ -20,34 +20,45 @@ forms = document.querySelectorAll('form');
 submit_form = forms[0];
 bod = document.querySelector('body');
 
-submit_form.addEventListener('submit', function (event) {
+inputs = document.querySelectorAll('input');
+
+//submit_form.addEventListener('submit', function (event) {
   // Your code goes here!
-console.log('yay');
-bod.style.backgroundColor = 'red';
-});
+//console.log('yay');
+//bod.style.backgroundColor = 'red';
+//});
 
 //document.addEventListener('click', function (event2) {
   // Your code goes here!
 //console.log('document clicked');
 //bod.style.backgroundColor = 'yellow';
 //});
+//var colorPicker = document.getElementByID('colorPicker');
+var gridSize = document.getElementById('sizePicker');
 
+function makeGrid() {
+  var canvas = document.getElementById('pixel_canvas');
+  var gridHeight = document.getElementById('inputHeight').value;
+  var gridWidth = document.getElementById('inputWidth').value;
+  //inputs = document.querySelectorAll('input');
+  //gridHeight = inputs[0]
+  //gridWidth = inputs[1]
+  //gridColor = inputs[3]
 
-function makeGrid(evt) {
-  const myCustomDiv = document.createElement('div');
-
-  for (var i = 0; i <= 10; i++){
-    const newBlock = document.createElement('p')
-    newBlock.textContent = 'p '+ i;
-    myCustomDiv.appendChild(newBlock);
+  for (var i = 1; i <= gridHeight; i++){
+    //var newCol = document.createElement('td');
+    //canvas.appendChild(newCol);
+    console.log('this is the ' + i + ' cell');
   }
 
-  document.body.appendChild(myCustomDiv);
 }
 
 
 
-document.addEventListener('click', makeGrid);
+gridSize.addEventListener('submit', function (event){
+  //event.preventDefault();
+  makeGrid();
+});
 //
 
 // add an event listen to the submit button for click .addEventListener('click', makeGrid())
