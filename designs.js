@@ -48,7 +48,11 @@ function makeGrid() {
   for (var i = 1; i <= gridHeight; i++){
     //var newCol = document.createElement('td');
     //canvas.appendChild(newCol);
-    console.log('this is the ' + i + ' cell');
+    console.log('column ' + i);
+
+    for (var j = 1; j <= gridWidth; j++){
+      console.log('row '+ j)
+    }
   }
 
 }
@@ -56,7 +60,7 @@ function makeGrid() {
 
 
 gridSize.addEventListener('submit', function (event){
-  //event.preventDefault();
+  event.preventDefault();
   makeGrid();
 });
 //
